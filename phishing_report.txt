@@ -1,0 +1,224 @@
+================================================================
+       PHISHING EMAIL IDENTIFIER -- ANALYSIS REPORT
+       Generated: 2026-08-29 14:40:56
+================================================================
+
+[CHECKLIST]  PHISHING RED-FLAG CHECKLIST
+
+   1. Urgent / threatening language
+      Words like 'immediately', 'account suspended', 'act now', 'within 24 hours'
+   2. Mismatched / shortened URLs
+      Links that don't match the display text or use bit.ly/tinyurl obfuscation
+   3. Unknown or spoofed sender
+      Address doesn't match the supposed organisation (e.g. support@paypa1.com)
+   4. Requests for sensitive data
+      Asks for passwords, credit-card numbers, SSNs, or login credentials
+   5. Generic greeting
+      Dear Customer / Dear User instead of your real name
+   6. Spelling & grammar errors
+      Professional organisations rarely send emails full of typos
+   7. Unexpected attachments
+      .exe, .zip, .scr or macro-enabled Office files
+   8. Too-good-to-be-true offers
+      You've won a prize you never entered for
+   9. Mismatched display name vs address
+      Display says 'Bank of America' but address is random@gmail.com
+  10. Suspicious reply-to address
+      Reply-To differs from the From address
+
+================================================================
+
+[EMAIL 1/5]  Risk: [!!!] HIGH (76/100)
+
+        From:    security@paypa1-verify.com
+        Reply-To:helpdesk02@gmail.com
+        Subject: URGENT: Your PayPal account has been limited!
+
+        Dear Customer,
+
+We have detected unusual sign-in activity on your account. Your account has been LIMITED until you verify your identity.
+
+Click the link below within 24 hours or your account will be permanently suspended:
+
+  http://bit.ly/3xP9kLm
+
+You must confirm your full name, date of birth, credit card number and PIN to restore access.
+
+Thank you,
+PayPal Security Team
+
+  Detected red flags:
+    X Urgent / threatening language
+    X Requests sensitive data
+    X Shortened / obfuscated links
+    X Unknown sender domain (paypa1-verify.com)
+    X Reply-To differs from sender domain
+    X Generic greeting
+
+  Additional flags noted by human review:
+    ! Unknown/spoofed sender (paypa1-verify.com, not paypal.com)
+    ! Mismatched reply-to (Gmail instead of PayPal domain)
+    ! Urgent/threatening language ('URGENT', 'permanently suspended')
+    ! Shortened link hides real destination
+    ! Requests sensitive data (credit card number, PIN)
+    ! Generic greeting ('Dear Customer')
+
+================================================================
+
+[EMAIL 2/5]  Risk: [!!]  MEDIUM (64/100)
+
+        From:    hr-department@microsoft-careers.net
+        Reply-To:recruitment-hr@outlook.com
+        Subject: Congratulations! You have been selected for a job interview
+
+        Dear Applicant,
+
+After reviewing your profile on LinkedIn, we are pleased to inform you that you have been shortlisted for the position of Senior Software Engineer at Microsoft.
+
+To confirm your interest, please reply with:
+  - Full legal name
+  - Home address
+  - Copy of your government-issued ID
+
+Kindly respond within 48 hours to secure your slot.
+
+Best regards,
+HR Department
+
+  Detected red flags:
+    X Urgent / threatening language
+    X Requests sensitive data
+    X Unknown sender domain (microsoft-careers.net)
+    X Reply-To differs from sender domain
+    X Generic greeting
+
+  Additional flags noted by human review:
+    ! Unknown/spoofed sender domain (microsoft-careers.net)
+    ! Mismatched reply-to address
+    ! Requests government-issued ID (identity theft risk)
+    ! Artificial urgency ('within 48 hours')
+    ! Generic greeting ('Dear Applicant')
+
+================================================================
+
+[EMAIL 3/5]  Risk: [!!]  MEDIUM (58/100)
+
+        From:    no-reply@arnazon-orders.com
+        Reply-To:cs-service@amazon-service.co
+        Subject: Your Amazon order #112-4873928-119203 could not be delivered
+
+        Hello,
+
+We were unable to deliver your recent order because the shipping address could not be verified.
+
+Please review and update your address by visiting:
+  https://arnazon.com/update-address
+
+If no action is taken within 12 hours, your order will be cancelled and your payment will not be refunded.
+
+Regards,
+Amazon Customer Service
+
+  Detected red flags:
+    X Urgent / threatening language
+    X Requests sensitive data
+    X Unknown sender domain (arnazon-orders.com)
+    X Reply-To differs from sender domain
+
+  Additional flags noted by human review:
+    ! Mismatched link (arnazon.com vs amazon.com -- look-alike domain)
+    ! Sender domain 'arnazon-orders.com' is not amazon.com
+    ! Urgency + threat of losing money
+    ! Mismatched reply-to address
+
+================================================================
+
+[EMAIL 4/5]  Risk: [!!!] HIGH (74/100)
+
+        From:    prizes@winner-lottery-intl.org
+        Reply-To:claim.prize@gmail.com
+        Subject: YOU HAVE WON $5,000,000!!!
+
+        Dear Lucky Winner,
+
+Congratulations!!! You have been selected as the grand prize winner of the International Email Lottery conducted on August 25, 2026.
+
+Your winning ticket number is: TK-88210
+Prize amount: FIVE MILLION US DOLLARS ($5,000,000.00)
+
+To claim your prize, please provide:
+  1. Your full name and address
+  2. Bank account details for the transfer
+  3. A processing fee of $200 via gift cards
+
+Respond immediately!!!
+
+Dr. James Williams
+Lottery Co-ordinator
+
+  Detected red flags:
+    X Urgent / threatening language
+    X Requests sensitive data
+    X Unknown sender domain (winner-lottery-intl.org)
+    X Reply-To differs from sender domain
+    X Generic greeting
+    X Too-good-to-be-true claims / spammy language
+
+  Additional flags noted by human review:
+    ! Too-good-to-be-true offer (you never entered a lottery)
+    ! Requests bank account details
+    ! Asks for upfront payment ($200 gift cards)
+    ! Excessive exclamation marks and ALL CAPS
+    ! Generic greeting ('Dear Lucky Winner')
+
+================================================================
+
+[EMAIL 5/5]  Risk: [!]   LOW (38/100)
+
+        From:    IT-Support@yourcompany.com
+        Reply-To:IT-Support@yourcompany.com
+        Subject: Password expires today -- reset now
+
+        Hi John,
+
+This is a reminder that your network password expires today. Please click the link below to set a new password before end of business:
+
+  https://yourcompany.com/itsupport/password-reset
+
+Note: This link expires at 5 PM today. If you have any questions contact the IT Help Desk at ext. 4523.
+
+Thanks,
+IT Support Team
+
+  Detected red flags:
+    X Urgent / threatening language
+    X Requests sensitive data
+
+  Additional flags noted by human review:
+    ! Uses the user's real name and a convincing domain (potential spear-phishing)
+    ! Urgent deadline (expires today, link expires at 5 PM)
+    ! Requests action via link -- always verify the URL before clicking
+
+================================================================
+
+[SUMMARY]
+
+  Email  Risk         Score    Subject
+  -----  ----------- -------  ------------------------------
+  1      [!!!] HIGH   76       URGENT: Your PayPal account has been lim
+  2      [!!]  MEDIUM 64       Congratulations! You have been selected 
+  3      [!!]  MEDIUM 58       Your Amazon order #112-4873928-119203 co
+  4      [!!!] HIGH   74       YOU HAVE WON $5,000,000!!!
+  5      [!]   LOW    38       Password expires today -- reset now
+
+================================================================
+
+[KEY TAKEAWAYS]
+
+  * Never click links in suspicious emails -- hover to preview the URL first.
+  * Check the sender's actual email address, not just the display name.
+  * Legitimate organisations will never ask for passwords or PINs via email.
+  * If something feels urgent or too good to be true, verify independently.
+  * Report phishing emails to your IT department or reportphishing@apwg.org.
+
+================================================================
